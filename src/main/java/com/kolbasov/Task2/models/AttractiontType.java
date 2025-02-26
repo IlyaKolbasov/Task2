@@ -1,7 +1,7 @@
 package com.kolbasov.Task2.models;
 
 public enum AttractiontType {
-    CASTEL,
+    CASTLE,
     PARK,
     MUSEUM
 
