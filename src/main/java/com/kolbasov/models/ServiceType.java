@@ -1,4 +1,4 @@
-package com.kolbasov.Task2.models;
+package com.kolbasov.models;
 
 public enum ServiceType {
     GUID,

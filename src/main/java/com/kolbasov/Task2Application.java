@@ -1,4 +1,4 @@
-package com.kolbasov.Task2;
+package com.kolbasov;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.kolbasov.Task2.models;
+package com.kolbasov.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ public class TicketInfo {
     private UUID id;
     private BigDecimal price;
     private String currency;
-    private boolean availability;
+    private Boolean availability;
     @OneToOne(mappedBy = "ticketInfo")
     private Attraction attraction;
 }

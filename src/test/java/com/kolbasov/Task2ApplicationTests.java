@@ -1,4 +1,4 @@
-package com.kolbasov.Task2;
+package com.kolbasov;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

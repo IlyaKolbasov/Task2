@@ -1,5 +1,4 @@
-package com.kolbasov.Task2.models;
-
+package com.kolbasov.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,16 +14,15 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "services")
-public class Service {
+@Table(name = "addresses")
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private String name;
-    private String description;
-    @Enumerated(EnumType.STRING)
-    private ServiceType serviceType;
-    @ManyToMany(mappedBy = "services")
+    private Integer building;
+    private String street;
+    private String city;
+    private String region;
+    @OneToMany(mappedBy = "address")
     private List<Attraction> attractions;
-
 }

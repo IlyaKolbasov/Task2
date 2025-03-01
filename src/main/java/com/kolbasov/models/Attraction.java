@@ -1,4 +1,4 @@
-package com.kolbasov.Task2.models;
+package com.kolbasov.models;
 
 
 import jakarta.persistence.*;
@@ -31,13 +31,12 @@ public class Attraction {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ticketInfo_id")
     private TicketInfo ticketInfo;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
+
     @JoinTable(
             name = "attraction_service",
             joinColumns = @JoinColumn(name = "attraction_id"),
             inverseJoinColumns = @JoinColumn(name = "course_id")
     )
     private List<Service> services;
-
-
 }
