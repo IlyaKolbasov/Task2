@@ -19,12 +19,17 @@ public class AddressService {
     private final AddressMapper addressMapper;
 
     public AddressDto createAddress(AddressDto addressDto) {
+        if(addressRepository.findByBuildingAndStreetAndCity(addressDto.getBuilding(), addressDto.getStreet(), addressDto.getCity()).isPresent()){
+            throw new IllegalArgumentException("Address already exists");
+        }
         Address address = addressMapper.toEntity(addressDto);
         return addressMapper.toDto(addressRepository.save(address));
     }
 
     public List<AddressDto> getAllAddresses() {
-        return addressRepository.findAll().stream().map(addressMapper::toDto).collect(Collectors.toList());
+        return addressRepository.findAll().stream()
+                .map(addressMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public AddressDto getAddress(UUID id) {

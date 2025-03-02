@@ -33,7 +33,7 @@ public class AddressController {
         return ResponseEntity.ok(addressService.getAllAddresses());
     }
 
-    @GetMapping("/read/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<AddressDto> getAddress(@PathVariable UUID id) {
         return ResponseEntity.ok(addressService.getAddress(id));
     }
@@ -48,6 +48,7 @@ public class AddressController {
         addressService.deleteAddress(id);
         return ResponseEntity.noContent().build();
     }
+
     @DeleteMapping("/delete/all")
     public ResponseEntity<Void> deleteAll() {
         addressService.deleteAll();

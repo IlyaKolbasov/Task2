@@ -2,7 +2,9 @@ package com.kolbasov.mappers;
 
 import com.kolbasov.dto.AddressDto;
 import com.kolbasov.models.Address;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AddressMapper {
     public AddressDto toDto(Address address) {
         if (address == null) {
