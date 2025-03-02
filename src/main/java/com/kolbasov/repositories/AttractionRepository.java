@@ -1,4 +1,4 @@
-package com.kolbasov.repository;
+package com.kolbasov.repositories;
 
 import com.kolbasov.models.Attraction;
 import org.springframework.data.jpa.repository.JpaRepository;

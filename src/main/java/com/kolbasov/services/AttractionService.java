@@ -4,8 +4,8 @@ package com.kolbasov.services;
 import com.kolbasov.dto.AttractionDto;
 import com.kolbasov.models.Address;
 import com.kolbasov.models.Attraction;
-import com.kolbasov.repository.AddressRepository;
-import com.kolbasov.repository.AttractionRepository;
+import com.kolbasov.repositories.AddressRepository;
+import com.kolbasov.repositories.AttractionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +16,7 @@ public class AttractionService {
     private final AddressRepository addressRepository;
 
     public void createAttraction(AttractionDto attractionDto) {
-        Address address = addressRepository.findByBuildingAndStreetAAndCity(
+        Address address = addressRepository.findByBuildingAndStreetAndCity(
                 attractionDto.getAddress().getBuilding(),
                 attractionDto.getAddress().getStreet(),
                 attractionDto.getAddress().getCity()

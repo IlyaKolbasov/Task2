@@ -1,4 +1,4 @@
-package com.kolbasov.repository;
+package com.kolbasov.repositories;
 
 import com.kolbasov.models.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface AddressRepository extends JpaRepository<Address, UUID> {
-     Optional<Address> findByBuildingAndStreetAAndCity(Integer building, String street,String city);
+     Optional<Address> findByBuildingAndStreetAndCity(Integer building, String street,String city);
 }
