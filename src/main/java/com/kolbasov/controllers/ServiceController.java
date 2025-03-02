@@ -19,7 +19,6 @@ public class ServiceController {
 
     @PostMapping("/create")
     public ResponseEntity<ServiceDto> createService(@RequestBody ServiceDto serviceDto) {
-
         return new ResponseEntity<>(serviceService.createService(serviceDto), HttpStatus.CREATED);
     }
 
@@ -48,7 +47,7 @@ public class ServiceController {
     }
 
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     public ResponseEntity<Void> deleteAllServices() {
         serviceService.deleteAll();
         return ResponseEntity.noContent().build();

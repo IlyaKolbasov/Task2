@@ -9,7 +9,7 @@ public class ServiceMapper {
 
     public ServiceDto toDto(Service service) {
         if (service == null) {
-            return null;
+            throw new IllegalArgumentException("Service is null in Mapper");
         }
         return ServiceDto.builder()
                 .id(service.getId())
@@ -21,7 +21,7 @@ public class ServiceMapper {
 
     public Service toEntity(ServiceDto serviceDto) {
         if (serviceDto == null) {
-            return null;
+            throw new IllegalArgumentException("ServiceDto is null in Mapper");
         }
         return Service.builder()
                 .name(serviceDto.getName())
