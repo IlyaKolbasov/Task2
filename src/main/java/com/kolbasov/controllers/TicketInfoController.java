@@ -17,7 +17,6 @@ public class TicketInfoController {
 
     private final TicketInfoService ticketInfoService;
 
-
     @PostMapping("/create")
     public ResponseEntity<TicketInfoDto> createTicketInfo(@RequestBody TicketInfoDto ticketInfoDto) {
         return new ResponseEntity<>(ticketInfoService.createTicketInfo(ticketInfoDto), HttpStatus.CREATED);

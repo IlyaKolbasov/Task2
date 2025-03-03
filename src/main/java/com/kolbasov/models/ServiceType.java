@@ -2,5 +2,8 @@ package com.kolbasov.models;
 
 public enum ServiceType {
     GUID,
-    EATING
+    EATING,
+    SHOPPING,
+    SPA,
+    TOUR
 }

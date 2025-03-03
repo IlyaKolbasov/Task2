@@ -24,7 +24,7 @@ public class Attraction {
     private String name;
     private String description;
     @Enumerated(EnumType.STRING)
-    private AttractiontType attractiontType;
+    private AttractionType attractionType;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
