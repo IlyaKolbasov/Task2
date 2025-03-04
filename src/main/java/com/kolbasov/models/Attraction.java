@@ -36,7 +36,7 @@ public class Attraction {
     @JoinTable(
             name = "attraction_service",
             joinColumns = @JoinColumn(name = "attraction_id"),
-            inverseJoinColumns = @JoinColumn(name = "course_id")
+            inverseJoinColumns = @JoinColumn(name = "service_id")
     )
     private List<Service> services;
 }
