@@ -31,8 +31,8 @@ public class Attraction {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ticketInfo_id")
     private TicketInfo ticketInfo;
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
 
+    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "attraction_service",
             joinColumns = @JoinColumn(name = "attraction_id"),
