@@ -35,7 +35,7 @@ public class Attraction {
     @JoinColumn(name = "ticket_info_id")
     private TicketInfo ticketInfo;
 
-    @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "attraction_service",
             joinColumns = @JoinColumn(name = "attraction_id"),

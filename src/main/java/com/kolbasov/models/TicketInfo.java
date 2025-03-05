@@ -25,6 +25,6 @@ public class TicketInfo {
     private String currency;
     @Column(name = "availability")
     private Boolean availability;
-    @OneToOne(mappedBy = "ticketInfo")
+    @OneToOne(mappedBy = "ticketInfo", cascade = CascadeType.ALL)
     private Attraction attraction;
 }

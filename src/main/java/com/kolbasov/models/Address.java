@@ -27,6 +27,6 @@ public class Address {
     private String city;
     @Column(name = "region")
     private String region;
-    @OneToMany(mappedBy = "address")
+    @OneToMany(mappedBy = "address",cascade = CascadeType.ALL)
     private List<Attraction> attractions;
 }

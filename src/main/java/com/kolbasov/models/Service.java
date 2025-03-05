@@ -27,7 +27,7 @@ public class Service {
     @Enumerated(EnumType.STRING)
     @Column(name = "service_type")
     private ServiceType serviceType;
-    @ManyToMany(mappedBy = "services")
+    @ManyToMany(mappedBy = "services",cascade = CascadeType.ALL)
     private List<Attraction> attractions;
 
 }
