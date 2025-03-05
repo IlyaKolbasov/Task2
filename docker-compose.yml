@@ -1,0 +1,25 @@
+version: '3.7'
+services:
+  task2:
+    container_name: task2
+    image: task2
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - database
+
+  database:
+    container_name: database
+    image: postgres
+    environment:
+     POSTGRES_DB: task2
+     POSTGRES_USER: postgres
+     POSTGRES_PASSWORD: qwerty
+     PGDATA: /data/postgres
+    volumes:
+    - ./postgres-order:/data/postgres
+    ports:
+     - "5432:5432"
+    restart: always
+

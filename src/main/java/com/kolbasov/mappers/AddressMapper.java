@@ -8,7 +8,8 @@ import org.springframework.stereotype.Component;
 public class AddressMapper {
     public AddressDto toDto(Address address) {
         if (address == null) {
-            return null;
+                throw new IllegalArgumentException("Address is null in Mapper");
+
         }
         return AddressDto.builder()
                 .id(address.getId())
@@ -20,7 +21,7 @@ public class AddressMapper {
     }
     public Address toEntity(AddressDto addressDto) {
         if (addressDto == null) {
-            return null;
+            throw new IllegalArgumentException("AddressDto is null in Mapper");
         }
         return Address.builder()
                 .building(addressDto.getBuilding())
