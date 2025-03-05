@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Task2
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:postgresql://database:5432/task2
+    username: postgres
+    password: qwerty
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:/db/changelog/changelog.xml

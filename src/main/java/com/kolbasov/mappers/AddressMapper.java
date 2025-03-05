@@ -1,0 +1,33 @@
+package com.kolbasov.mappers;
+
+import com.kolbasov.dto.AddressDto;
+import com.kolbasov.models.Address;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AddressMapper {
+    public AddressDto toDto(Address address) {
+        if (address == null) {
+                throw new IllegalArgumentException("Address is null in Mapper");
+
+        }
+        return AddressDto.builder()
+                .id(address.getId())
+                .building(address.getBuilding())
+                .street(address.getStreet())
+                .city(address.getCity())
+                .region(address.getRegion())
+                .build();
+    }
+    public Address toEntity(AddressDto addressDto) {
+        if (addressDto == null) {
+            throw new IllegalArgumentException("AddressDto is null in Mapper");
+        }
+        return Address.builder()
+                .building(addressDto.getBuilding())
+                .street(addressDto.getStreet())
+                .city(addressDto.getCity())
+                .region(addressDto.getRegion())
+                .build();
+    }
+}
