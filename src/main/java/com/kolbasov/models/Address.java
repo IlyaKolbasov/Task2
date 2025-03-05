@@ -19,9 +19,13 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(name = "building")
     private Integer building;
+    @Column(name = "street")
     private String street;
+    @Column(name = "city")
     private String city;
+    @Column(name = "region")
     private String region;
     @OneToMany(mappedBy = "address")
     private List<Attraction> attractions;

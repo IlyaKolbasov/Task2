@@ -19,7 +19,7 @@ public class TicketInfoController {
 
     @PostMapping("/create")
     public ResponseEntity<TicketInfoDto> createTicketInfo(@RequestBody TicketInfoDto ticketInfoDto) {
-        return new ResponseEntity<>(ticketInfoService.createTicketInfo(ticketInfoDto), HttpStatus.CREATED);
+        return ResponseEntity.ok(ticketInfoService.createTicketInfo(ticketInfoDto));
     }
 
     @GetMapping("/get")

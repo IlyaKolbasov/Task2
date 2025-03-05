@@ -21,15 +21,18 @@ public class Attraction {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
     @Enumerated(EnumType.STRING)
+    @Column(name = "attraction_type")
     private AttractionType attractionType;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ticketInfo_id")
+    @JoinColumn(name = "ticket_info_id")
     private TicketInfo ticketInfo;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)

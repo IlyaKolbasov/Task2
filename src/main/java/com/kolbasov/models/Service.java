@@ -20,9 +20,12 @@ public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "description")
     private String description;
     @Enumerated(EnumType.STRING)
+    @Column(name = "service_type")
     private ServiceType serviceType;
     @ManyToMany(mappedBy = "services")
     private List<Attraction> attractions;

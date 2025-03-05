@@ -72,4 +72,44 @@ public class AttractionService {
         attractionRepository.deleteAll();
     }
 
+    public List<AttractionDto> getAttractionsByCity(String city) {
+        List<Attraction> attractions = attractionRepository.findByAddressCity(city);
+        if (attractions.isEmpty()) {
+            throw new NoSuchElementException("No attractions found in city: " + city);
+        }
+        return attractions.stream()
+                .map(attractionMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    public List<AttractionDto> getAttractionsByRegion(String region) {
+        List<Attraction> attractions = attractionRepository.findByAddressRegion(region);
+        if (attractions.isEmpty()) {
+            throw new NoSuchElementException("No attractions found in region: " + region);
+        }
+        return attractions.stream()
+                .map(attractionMapper::toDto)
+                .collect(Collectors.toList());
+    }
+
+    public List<AttractionDto> getAttractionsByServices(String serviceName) {
+        List<Attraction> attractions = attractionRepository.findByServicesName(serviceName);
+        if (attractions.isEmpty()) {
+            throw new NoSuchElementException("No attractions found with service: " + serviceName);
+        }
+        return attractions.stream()
+                .map(attractionMapper::toDto)
+                .collect(Collectors.toList());
+
+    }
+
+    public List<AttractionDto> searchByName(String name) {
+        List<Attraction> attractions = attractionRepository.findByNameContaining(name);
+            if (attractions.isEmpty()) {
+                throw new NoSuchElementException("No attractions found with name containing: " + name);
+            }
+        return attractions.stream()
+                .map(attractionMapper::toDto)
+                .collect(Collectors.toList());
+    }
 }

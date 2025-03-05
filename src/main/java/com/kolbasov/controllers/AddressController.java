@@ -23,7 +23,7 @@ public class AddressController {
     @PostMapping("/create")
     public ResponseEntity<AddressDto> createAttraction(@RequestBody AddressDto addressDto) {
 
-        return new ResponseEntity<>(addressService.createAddress(addressDto), HttpStatus.CREATED);
+        return ResponseEntity.ok(addressService.createAddress(addressDto));
     }
 
     @GetMapping("/get")

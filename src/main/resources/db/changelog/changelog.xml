@@ -47,7 +47,7 @@
             <column name="description" type="text"/>
             <column name="attraction_type" type="varchar(255)"/>
             <column name="address_id" type="uuid"/>
-            <column name="ticketInfo_id" type="uuid"/>
+            <column name="ticket_info_id" type="uuid"/>
         </createTable>
         <addForeignKeyConstraint
                 baseTableName="attractions"
@@ -57,7 +57,7 @@
                 constraintName="fk_attractions_address" />
         <addForeignKeyConstraint
                 baseTableName="attractions"
-                baseColumnNames="ticketInfo_id"
+                baseColumnNames="ticket_info_id"
                 referencedTableName="ticket_info"
                 referencedColumnNames="id"
                 constraintName="fk_attractions_ticket_info" />

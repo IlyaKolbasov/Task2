@@ -19,8 +19,11 @@ public class TicketInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+    @Column(name = "price")
     private BigDecimal price;
+    @Column(name = "currency")
     private String currency;
+    @Column(name = "availability")
     private Boolean availability;
     @OneToOne(mappedBy = "ticketInfo")
     private Attraction attraction;
