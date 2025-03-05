@@ -14,7 +14,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .servers(List.of(new Server().url("http://localhost:8080")))
                 .info(
-                        new Info().title("Task@")
+                        new Info().title("Task2")
                 );
     }
 }
